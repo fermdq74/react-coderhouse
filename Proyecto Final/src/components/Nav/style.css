@@ -1,0 +1,20 @@
+.navbar {
+
+    margin-bottom: 2rem;
+
+    .navbar-brand {
+        font-size: 2rem;
+    }
+    
+    .nav-item {
+        font-size: 1.25rem;
+
+        .nav-link {
+            color: white;
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+    
+}

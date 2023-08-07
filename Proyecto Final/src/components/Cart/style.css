@@ -1,0 +1,15 @@
+.cart-widget {
+    background: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+a {
+
+    text-decoration: none;
+}
+
+svg {
+    margin: 0 0.25rem
+}
