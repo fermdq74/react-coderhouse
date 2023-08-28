@@ -23,7 +23,7 @@ const ItemCount = ( {stock, initial}) => {
             <button onClick={decrease} className="btn btn-light"> - </button>
             <input type="text" className="item-count-number" value={count} disabled />
             <button onClick={increase} className="btn btn-light"> + </button>
-            <a href="#" className="btn btn-primary float-end">Agregar al carro</a>
+            <a href="#" className="btn btn-primary mt-2">Agregar al carro</a>
         </div>
     )
 

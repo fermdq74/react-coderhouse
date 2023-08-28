@@ -1,14 +1,16 @@
 import { useState, useEffect } from "react";
 import ItemList from "./ItemList";
-import { getProducts } from "../../services/products.js";
+import { getProductsByCategory } from "../../services/products.js";
 
-const ItemListContainer = ( {greetingMsg} ) => {
+const ItemListContainer = ( {category = '' } ) => {
 
     const [products, setProducts] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     
     useEffect(() => {
-        getProducts()
+        setIsLoading(true);
+        
+        getProductsByCategory(category)
             .then( result => {
                 setProducts(result.products)
             }).catch((error) => {
@@ -17,16 +19,15 @@ const ItemListContainer = ( {greetingMsg} ) => {
                 console.log('Promise resolved');
                 setIsLoading(false);
             });
-    }, []);
-    
+    }, [category]);
+
     return (
-        <div className='container'>
-            <h1>{greetingMsg}</h1>
+
             <ItemList 
                 products={products}
                 isLoading={isLoading}
             />
-        </div>
+
     )
 
 }
