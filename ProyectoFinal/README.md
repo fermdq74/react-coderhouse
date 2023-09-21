@@ -52,7 +52,7 @@ Esto iniciará el servidor de desarrollo en [http://localhost:5173](http://local
 ## Estructura del Proyecto/Componentes
 La estructura de archivos y directorios del proyecto se verás así:
 
-tu-proyecto/
+ProyectoFinal/
 ├───public
 └───src
     │   App.css
@@ -101,8 +101,8 @@ tu-proyecto/
     │       NotFound.jsx
     │
     └───services
-    │      cart.js
-    │      products.js  
+            cart.js
+            products.js
    ── package.json
    ── README.md
 └── ...
