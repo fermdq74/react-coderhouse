@@ -1,37 +1,37 @@
-import { useState, useEffect } from "react";
-//import ItemList from "./ItemList";
-import { getItem } from "../../services/products.js";
+import { useState, useEffect, useContext } from "react";
+import { useParams } from "react-router-dom";
+import { getItem } from "../../services/products";
 import ItemDetail from "./ItemDetail";
+import CartContext from "../../context/CartContext";
 
-const ItemDetailContainer = ( {id} ) => {
+const ItemDetailContainer = () => {
 
-    const [item, setItem] = useState([]);
+    const [item, setItem] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
+    const { id } = useParams();
+    const { addItem } = useContext(CartContext);
 
     useEffect(() => {
+
         getItem(id)
             .then(res => {
-                setItem(res.product);
+                setItem(res);
             })
-            .catch(err => console.log(err))
+            .catch( (err) => {
+                console.log(err);
+                setItem(null);
+            })
             .finally(() => {
                 setIsLoading(false);
-                console.log("Promise completed");
             })
-    }, [])
 
-    if (isLoading) {
-        return <p>Cargando...</p>;
-    }
-    
-    if (!item) {
-        return <h1>Producto no encontrado</h1>;
-    }
+    }, [id])
 
     return (
         <ItemDetail 
             item={item}
             isLoading={isLoading}
+            addItem={addItem}
         />
     )
 

@@ -3,16 +3,17 @@ import Item from "./Item";
 const ItemList = ({products, isLoading}) => {
 
   if (isLoading) {
-    return <p>Cargando...</p>;
+    return <p className="text-center">Cargando...</p>;
   }
   return (
-    <div>     
+    <div className="row">
+      <div className="col-md-8 mx-auto text-center">
         {!isLoading && products.length === 0 && <p>No hay productos</p>}
           
-        <div className="row">
+        <div className="row justify-content-center">
           {products.map((product) => {
             return (
-              <div key={product.id} className="col-md-3">
+              <div key={product.id} className="col-md-4">
                 <Item
                   id={product.id} 
                   title={product.title}
@@ -24,6 +25,7 @@ const ItemList = ({products, isLoading}) => {
               </div>
             );
         })}
+        </div>
       </div>
     </div>
   );

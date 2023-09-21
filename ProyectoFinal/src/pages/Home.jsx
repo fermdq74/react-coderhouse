@@ -6,7 +6,7 @@ const Home = ( {greetingMsg} ) => {
 
     return (
         <div className="container">
-            <h1>{greetingMsg}</h1>
+            <h1 className="text-center mb-4">{greetingMsg}</h1>
             <ItemListContainer greetingMsg={msg} />
         </div>
     )

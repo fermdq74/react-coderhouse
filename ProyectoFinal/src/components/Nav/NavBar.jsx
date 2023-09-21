@@ -12,7 +12,7 @@ const Navbar = () => {
     useEffect(() => {
         getCategories()
             .then( result => {
-                setCategories(result.categories);
+                setCategories(result);
             }).catch((error) => {
                 console.log(error);
             });
@@ -44,7 +44,7 @@ const Navbar = () => {
                                     return (
                                         <li className="nav-item" key={index}>
                                             <NavLink 
-                                                to={`/category/${navItem.slug}`} 
+                                                to={`/category/${navItem.id}`} 
                                                 className='nav-link'  
                                                 >
                                                     {navItem.name}
@@ -55,7 +55,7 @@ const Navbar = () => {
                             }
                         </ul>
                     </div>
-                    <CartWidget count={cartCount} />
+                    <CartWidget />
                 </div>
             </nav>  
     )
