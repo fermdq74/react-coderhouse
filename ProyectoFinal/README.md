@@ -1,6 +1,8 @@
-# Zebra Store
+## Zebra Store
 
 Zebra Store es un proyecto desarrollado en React como trabajo final del curso de React JS de [CoderHouse](https://coderhouse.com). El mismo consiste en una tienda online que permite buscar productos por categorías, agregarlos a un carro de compras y generar órdenes de compra.
+
+En [este link](https://www.awesomescreenshot.com/video/20974994?key=5f14ef2782fff880f9bdc082f318fa51) podrás encontrar una demo del sitio web.
 
 ## Table of Contents
 
@@ -52,7 +54,7 @@ Esto iniciará el servidor de desarrollo en [http://localhost:5173](http://local
 ## Estructura del Proyecto/Componentes
 La estructura de archivos y directorios del proyecto se verás así:
 
-ProyectoFinal/
+tu-proyecto/
 ├───public
 └───src
     │   App.css
@@ -101,8 +103,8 @@ ProyectoFinal/
     │       NotFound.jsx
     │
     └───services
-            cart.js
-            products.js
+    │      cart.js
+    │      products.js  
    ── package.json
    ── README.md
 └── ...
